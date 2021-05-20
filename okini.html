@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界旅行</title>
+
+    <link rel="stylesheet" href="./okini.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <h1>世界旅行</h1>
+            <img src="images/bgbg.JPG">
+            <p class="mb10">
+                トラベラーを選択、リロードして世界各国に旅行へ！
+            </p>
+            <div class="mb20">
+                <p id="main_v"><img src="./images/ani00.PNG"></p>
+            </div>
+            <div class="world">
+                <div class="block03">
+                    <p>WHICH <br>COUNTRY?</p>
+                    <div class="reload">
+                        <p><input type="button" value="SELECT COUNTRY(reload)" onclick="window.location.reload();"></p>
+                    </div>
+                    <ul>
+                        <li><label><input type="radio" onclick="demo2( 'bg01' )" name="bg"
+                                    value="bg01">&nbsp;INDIA</label>
+                        </li>
+                        <li><label><input type="radio" onclick="demo2( 'bg02' )" name="bg"
+                                    value="bg02">&nbsp;SPAIN</label>
+                        </li>
+                        <li><label><input type="radio" onclick="demo2( 'bg03' )" name="bg"
+                                    value="bg03">&nbsp;FRANCE</label>
+                        </li>
+                        <li><label><input type="radio" onclick="demo2( 'bg04' )" name="bg"
+                                    value="bg0">&nbsp;EGYPT</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block02">
+
+                    <ul class="mb30">
+                        <p>SELECT TRAVELER</p>
+                        <li><label><input type="radio" onclick="demo1( 'ani01' )" name="animal"
+                                    value="ani01">&nbsp;QUEEN
+                                ERIZABETH</label></li>
+                        <li><label><input type="radio" onclick="demo1( 'ani02' )" name="animal"
+                                    value="ani02">&nbsp;SACHIOKA</label></li>
+                        <li><label><input type="radio" onclick="demo1( 'ani03' )" name="animal"
+                                    value="ani03">&nbsp;DORAEMON</label></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            $(function () {
+                var val_ani = localStorage.getItem('val');
+                if (val_ani != null) {
+                    $('#main_v').html('<img src="images/' + val_ani + '.png">');
+                };
+            });
+
+            function demo1(animal) {
+                localStorage.setItem('val', animal);
+                var val_ani = localStorage.getItem('val');
+                $('#main_v').html('<img src="images/' + val_ani + '.png" width="30" height="30">');
+            }
+
+            function demo2(animal) {
+                sessionStorage.setItem('val', animal);
+                var val_ani = sessionStorage.getItem('val');
+                $('#main_v').css('url(images/' + val_ani + '.jpg) no-repeat');
+            }
+
+            function demo2(back) {
+                sessionStorage.setItem('val', back);
+                var val_bg = sessionStorage.getItem('val');
+                $('#main_v').css('background', 'url(images/' + val_bg + '.jpg) no-repeat');
+            }
+
+            function demo1(back) {
+                localStorage.setItem('val', back || animal);
+                var val_bg = localStorage.getItem('val');
+                $('#main_v').html('<img src="images/' + val_bg + '.png" width="500" height="500">');
+            }
+        </script>
+
+</body>
+
+</html>

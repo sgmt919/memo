@@ -1,0 +1,42 @@
+.block02{
+    width: 200px;
+    height: 300px;
+}
+
+#main{
+    text-align: center;
+    font-size: 30px;
+    font-family: tsukuArdgothic-regular;
+}
+ul{
+    text-align: center;
+    list-style: none;
+}
+.block02{
+    text-align: center;
+}
+.block03{
+    text-align: center;
+}
+.reroad{
+    width:40px;
+    height:40px;
+}
+.mb20{
+    text-align: center;
+    margin-left: 250px;
+}
+    
+.background{
+    width: auto;
+    height: 600px;
+}
+.mb30{
+    text-align: center;
+    margin-right: -200px;
+}
+.world{
+    justify-content: space-around;
+    display: flex;
+text-align: center;
+}
